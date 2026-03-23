@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Jalees - Senior .NET Full Stack Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+        }
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .skill-card.backend { border-top-color: #007acc; }
+        .skill-card.frontend { border-top-color: #61dafb; }
+        .skill-card.database { border-top-color: #f29191; }
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .project-body {
+            padding: 2rem;
+        }
+        .features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        .features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .features i {
+            color: #4CAF50;
+            width: 20px;
+        }
+        /* Experience Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .timeline-item {
+            display: flex;
+            margin: 3rem 0;
+            position: relative;
+        }
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            width: 45%;
+            transition: all 0.3s ease;
+        }
+        .timeline-content.left {
+            margin-right: 50%;
+        }
+        .timeline-content.right {
+            margin-left: 50%;
+        }
+        .timeline-content:hover {
+            transform: scale(1.05);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px white;
+        }
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            flex: 1;
+            margin: 0 1rem;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .contact-info { flex-direction: column; gap: 1rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item { flex-direction: column; }
+            .timeline-content { width: 100%; margin: 0 !important; }
+            .timeline-dot { left: 20px; }
+            .stats { flex-direction: column; gap: 1rem; }
+            .stat-item { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1><i class="fas fa-code"></i> Mohamed Jalees</h1>
+                <p class="subtitle">Senior .NET Full Stack Developer | Dubai, UAE</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i> +971 58 890 8697
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i> spj.jaleesmca@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </div>
+                </div>
+                <a href="#contact" class="btn">Hire Me Now <i class="fas fa-arrow-right"></i></a>
+                <div style="margin-top: 1rem; font-size: 1.1rem; font-weight: 600;">
+                    ✅ Immediate Joiner | Visit Visa | UAE Driving License
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">🛠️ Core Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card backend">
+                    <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+                    <h3>.NET Backend</h3>
+                    <p>C#, ASP.NET Core, Web API, Entity Framework, Microservices</p>
+                </div>
+                <div class="skill-card frontend">
+                    <div class="skill-icon"><i class="fab fa-angular"></i></div>
+                    <h3>Modern Frontend</h3>
+                    <p>Angular, React.js, TypeScript, Bootstrap, SPA</p>
+                </div>
+                <div class="skill-card database">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <p>SQL Server, MySQL, Oracle, Stored Procedures, Performance Tuning</p>
+                </div>
+                <div class="skill-card backend">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h3>AI & Modern</h3>
+                    <p>LLM Integration, RAG, Python/Django, REST APIs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">💼 Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🏥 Clinic Patient Management</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">ASP.NET Core</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Full SDLC Delivery (2025)</strong> - Production Deployed</p>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Patient Registration & Profiles</li>
+                            <li><i class="fas fa-check"></i> Prescription Management</li>
+                            <li><i class="fas fa-check"></i> Medication Tracking</li>
+                            <li><i class="fas fa-check"></i> Advanced Reporting Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📊 Ecowas Enterprise Platform</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular/React</span>
+                            <span class="tech-tag">ASP.NET Core</span>
+                            <span class="tech-tag">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Mobile Net Soft, Sharjah (2022-2025)</strong></p>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Role-Based Admin Dashboards</li>
+                            <li><i class="fas fa-check"></i> Data Visualization & Analytics</li>
+                            <li><i class="fas fa-check"></i> Workflow Automation</li>
+                            <li><i class="fas fa-check"></i> Single Page Applications</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🏭 Production Management System</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">ASP.NET MVC</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Stored Procedures</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>A2C Services, RAK (2020-2022)</strong></p>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Inventory & Stock Tracking</li>
+                            <li><i class="fas fa-check"></i> Employee Performance Metrics</li>
+                            <li><i class="fas fa-check"></i> Production Workflow Optimization</li>
+                            <li><i class="fas fa-check"></i> Query Performance Tuning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">🏢 Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content right">
+                        <h3>Independent .NET Consultant</h3>
+                        <p><strong>Remote | Nov 2025 – Jan 2026</strong></p>
+                        <p>Clinic Patient Management System - Complete SDLC delivery</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content left">
+                        <h3>Senior Software Developer</h3>
+                        <p><strong>Mobile Net Soft – Sharjah, UAE | Oct 2022 – Oct 2025</strong></p>
+                        <p>Ecowas, Campaign Management, ARC, Dubai BPS projects</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content right">
+                        <h3>System Software Developer</h3>
+                        <p><strong>A2C Services LLC – RAK, UAE | Nov 2020 – Oct 2022</strong></p>
+                        <p>Production management & performance tracking systems</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content left">
+                        <h3>Software Developer</h3>
+                        <p><strong>Aroopa Technologies – Chennai | Apr 2018 – Oct 2020</strong></p>
+                        <p>Danseshopper.com e-commerce platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    Years Experience
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    UAE Projects
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4+</span>
+                    Enterprise Systems
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+<!-- FIXED CTA Section - Background + Icons Working -->
+	<section id="contact" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52); padding: 6rem 0;">
+		<div class="container">
+			<h2 class="section-title" style="color: white;">🚀 Ready to Start?</h2>
+			<div style="text-align: center; max-width: 700px; margin: 0 auto; color: white;">
+				<h3 style="font-size: 2rem; margin-bottom: 1rem;">Immediate Joiner - Dubai Based</h3>
+				<p style="font-size: 1.3rem; margin: 2rem 0; font-weight: 500;">
+					✅ Visit Visa | ✅ UAE Driving License | ✅ Proven UAE Delivery
+				</p>
+				<div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+					<a href="mailto:spj.jaleesmca@gmail.com" class="btn" style="background: linear-gradient(135deg, #4CAF50, #45a049); box-shadow: 0 8px 25px rgba(76,175,80,0.4);">
+						📧 Email Me
+					</a>
+					<a href="tel:+971588908697" class="btn" style="background: linear-gradient(135deg, #2196F3, #1976D2); box-shadow: 0 8px 25px rgba(33,150,243,0.4);">
+						📞 Call Now
+					</a>
+					<a href="https://linkedin.com/in/muhammed-jalees-6333891b8/" target="_blank" class="btn" style="background: linear-gradient(135deg, #0077B5, #005f8d); box-shadow: 0 8px 25px rgba(0,119,181,0.4);">
+						💼 LinkedIn
+					</a>
+				</div>
+				<div style="margin-top: 3rem; font-size: 1.2rem; font-weight: 600; background: rgba(255,255,255,0.2); padding: 1.5rem 3rem; border-radius: 50px; backdrop-filter: blur(20px);">
+					⚡ Available Immediately | Dubai UAE | Visit Visa Holder
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Mohamed Jalees</h3>
+            <p>Senior .NET Full Stack Developer | Dubai, UAE</p>
+            <div style="margin: 2rem 0;">
+                <a href="tel:+971588908697" style="color: white; margin: 0 1rem; font-size: 1.5rem;"><i class="fas fa-phone"></i></a>
+                <a href="mailto:spj.jaleesmca@gmail.com" style="color: white; margin: 0 1rem; font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/muhammed-jalees-6333891b8/" style="color: white; margin: 0 1rem; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p style="opacity: 0.8;">© 2024 Mohamed Jalees. All rights reserved. | Immediate Joiner | Dubai UAE</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.skill-card, .project-card, .timeline-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
