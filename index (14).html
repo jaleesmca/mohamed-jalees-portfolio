@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammed Jalees | Senior .NET Full Stack Developer, Dubai</title>
+<meta name="description" content="Senior .NET Full Stack Developer in Dubai with 8+ years building enterprise web applications with C#, ASP.NET Core, Angular, React, SQL Server and Oracle.">
+<meta property="og:title" content="Muhammed Jalees | Senior .NET Full Stack Developer">
+<meta property="og:description" content="8+ years building and shipping enterprise web applications, from database to deployment.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' text-anchor='middle' fill='%232dd4bf'%3EMJ%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b1220; --bg2:#0f1830; --card:#121c34; --line:#22304d; --text:#e7edf7; --muted:#9aa8c2;
+  --accent:#2dd4bf; --accent2:#60a5fa; --warm:#fbbf24; --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+[data-theme="light"]{
+  --bg:#f6f8fc; --bg2:#eef2f9; --card:#ffffff; --line:#dbe3f0; --text:#0f1b33; --muted:#52627f;
+  --accent:#0f9d8a; --accent2:#2563eb; --warm:#b7791f; --shadow:0 10px 30px rgba(15,27,51,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.02em;margin-bottom:10px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;display:block}
+.lead{color:var(--muted);max-width:640px;margin-bottom:38px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center;font-size:.92rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.icon-btn{background:var(--card);border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1rem}
+@media(max-width:760px){.links a.hide-m{display:none}}
+
+/* hero */
+.hero{padding:96px 0 70px;background:
+  radial-gradient(900px 400px at 85% -10%,color-mix(in srgb,var(--accent2) 22%,transparent),transparent),
+  radial-gradient(700px 380px at 5% 10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:99px;font-size:.84rem;color:var(--muted);margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 25%,transparent)}
+h1{font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.08;letter-spacing:-.035em;margin-bottom:16px}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:1.1rem;color:var(--muted);max-width:560px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06101f;border:0}
+.code{background:#0a1020;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem}
+.code .bar{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid #1b2745;align-items:center;color:#8a99b8}
+.code .bar i{width:11px;height:11px;border-radius:50%;display:block}
+.code pre{padding:18px 18px 20px;color:#c9d6ee;overflow:auto;line-height:1.7}
+.k{color:#7dd3fc}.s{color:#86efac}.c{color:#64748b}.t{color:#fcd34d}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center}
+.stat b{display:block;font-size:1.9rem;letter-spacing:-.03em;color:var(--accent)}
+.stat span{font-size:.85rem;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.about p{color:var(--muted);margin-bottom:14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.panel h3{font-size:1rem;margin-bottom:12px}
+.panel li{list-style:none;color:var(--muted);padding:6px 0;border-bottom:1px dashed var(--line);font-size:.93rem}
+.panel li:last-child{border:0}
+.panel li b{color:var(--text)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.skill h3{font-size:.95rem;margin-bottom:14px;display:flex;gap:10px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.8rem;padding:5px 11px;border-radius:99px;background:var(--bg2);border:1px solid var(--line);color:var(--muted)}
+.chip.hot{color:var(--text);border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:.25s;position:relative;overflow:hidden}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow)}
+.proj .tag{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.proj .tag.warm{color:var(--warm)}
+.proj h3{font-size:1.15rem;margin-bottom:8px;letter-spacing:-.01em}
+.proj p{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.proj ul{margin:0 0 16px 18px;color:var(--muted);font-size:.9rem}
+.proj ul li{margin-bottom:4px}
+.proj .chips{margin-top:auto}
+.proj.feature{grid-column:1/-1;background:linear-gradient(135deg,var(--card),var(--bg2))}
+.note{font-size:.82rem;color:var(--muted);margin-top:22px}
+
+/* timeline */
+.timeline{position:relative;margin-left:8px;border-left:2px solid var(--line);padding-left:30px}
+.job{position:relative;margin-bottom:30px}
+.job::before{content:"";position:absolute;left:-39px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job .when{font-size:.82rem;color:var(--accent);font-weight:600}
+.job h3{font-size:1.08rem;margin:2px 0}
+.job .where{color:var(--muted);font-size:.9rem;margin-bottom:8px}
+.job ul{margin-left:18px;color:var(--muted);font-size:.92rem}
+.job li{margin-bottom:3px}
+
+/* education + contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.contact{text-align:center;background:linear-gradient(135deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:24px;padding:60px 24px}
+.contact h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.contact p{color:var(--muted);max-width:520px;margin:10px auto 28px}
+.contact .cta{justify-content:center}
+footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">M<span>J</span>.</a>
+    <div class="links">
+      <a href="#about" class="hide-m">About</a>
+      <a href="#skills" class="hide-m">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience" class="hide-m">Experience</a>
+      <a href="#contact">Contact</a>
+      <button class="icon-btn" id="theme" aria-label="Toggle light or dark theme">☾</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="badge"><span class="dot"></span> Dubai, United Arab Emirates</span>
+      <h1>Senior .NET <span class="grad">Full Stack</span> Developer</h1>
+      <p class="sub">I build and ship enterprise web applications, from the database to the production server. 8+ years across C#, ASP.NET Core, Angular, React, SQL Server and Oracle, and I mentor junior developers along the way.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View my work →</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="code" aria-hidden="true">
+      <div class="bar"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#4ade80"></i><span style="margin-left:10px">Developer.cs</span></div>
+<pre><span class="k">public sealed class</span> <span class="t">Developer</span>
+{
+    <span class="k">public string</span> Name     = <span class="s">"Muhammed Jalees"</span>;
+    <span class="k">public int</span>    Years    = <span class="s">8</span>;
+    <span class="k">public string</span> Base     = <span class="s">"Dubai, UAE"</span>;
+    <span class="k">public string</span>[] Stack  = {
+        <span class="s">"C#"</span>, <span class="s">"ASP.NET Core"</span>, <span class="s">"Angular"</span>,
+        <span class="s">"React"</span>, <span class="s">"SQL Server"</span>, <span class="s">"Oracle"</span>
+    };
+
+    <span class="c">// from requirements to production</span>
+    <span class="k">public</span> <span class="t">Solution</span> Ship(<span class="t">Problem</span> p) =&gt;
+        p.Design().Build().Test().Deploy();
+}</pre>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats" style="width:100%;grid-column:1/-1">
+      <div class="stat reveal"><b>8+</b><span>Years of experience</span></div>
+      <div class="stat reveal"><b>4</b><span>Companies, India &amp; UAE</span></div>
+      <div class="stat reveal"><b>MCA</b><span>Alagappa University</span></div>
+      <div class="stat reveal"><b>Full&nbsp;stack</b><span>DB → API → UI → IIS</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">About</span>
+      <h2>Practical engineering, built to last</h2>
+      <p>I am a .NET full stack developer who enjoys turning business requirements into reliable web applications. My work covers the whole path: database design and stored procedures, REST APIs, responsive front ends, and deployment on IIS.</p>
+      <p>I have delivered systems for manufacturing, health care, e-commerce, enterprise administration and government use. I care about clean code, sensible design patterns, and software that the next developer can understand.</p>
+      <p>I also guide junior developers, review their work, and I am now adding Azure and AI integration to my toolkit.</p>
+    </div>
+    <div class="panel reveal">
+      <h3>Quick facts</h3>
+      <ul>
+        <li><b>Role:</b> Senior .NET Full Stack Developer</li>
+        <li><b>Based in:</b> Dubai, UAE</li>
+        <li><b>Education:</b> Master of Computer Applications (MCA)</li>
+        <li><b>Languages:</b> English, Tamil</li>
+        <li><b>Working style:</b> Agile, clean architecture, clear communication</li>
+        <li><b>Learning now:</b> Azure, AI integration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--bg2)">
+  <div class="wrap">
+    <span class="eyebrow">Skills</span>
+    <h2>Tools I use every day</h2>
+    <p class="lead">Strongest on the Microsoft stack, comfortable on the front end, and used to working with both SQL Server and Oracle.</p>
+    <div class="skills">
+      <div class="skill reveal"><h3>⚙️ Back end</h3><div class="chips">
+        <span class="chip hot">C#</span><span class="chip hot">ASP.NET Core</span><span class="chip hot">Web API</span><span class="chip">ASP.NET MVC</span><span class="chip">Razor Pages</span><span class="chip">Web Forms</span><span class="chip">Entity Framework</span><span class="chip">LINQ</span><span class="chip">ADO.NET</span><span class="chip">Python / Django</span></div></div>
+      <div class="skill reveal"><h3>🖥️ Front end</h3><div class="chips">
+        <span class="chip hot">Angular</span><span class="chip hot">React</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">Bootstrap</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">AJAX</span></div></div>
+      <div class="skill reveal"><h3>🗄️ Databases</h3><div class="chips">
+        <span class="chip hot">SQL Server</span><span class="chip hot">Oracle</span><span class="chip">MySQL</span><span class="chip">T-SQL</span><span class="chip">Stored procedures</span><span class="chip">Query tuning</span><span class="chip">Migrations</span></div></div>
+      <div class="skill reveal"><h3>🚀 Delivery</h3><div class="chips">
+        <span class="chip hot">IIS deployment</span><span class="chip">REST APIs</span><span class="chip">Agile</span><span class="chip">Design patterns</span><span class="chip">Crystal Reports</span><span class="chip">Code review</span><span class="chip">Mentoring</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <span class="eyebrow">Projects</span>
+    <h2>Selected work</h2>
+    <p class="lead">Systems I have designed, built or maintained. Client and data details are kept confidential.</p>
+    <div class="grid">
+
+      <article class="proj feature reveal">
+        <div class="tag">Current · In production</div>
+        <h3>HR &amp; Budget Management System</h3>
+        <p>An enterprise web application with HR and budget modules, built for a government client in Dubai and now running in production. I work on development and the Oracle data layer, handle the IIS deployment, and guide the junior developers on the team.</p>
+        <ul>
+          <li>ASP.NET Core application with an Oracle database, using Oracle.ManagedDataAccess</li>
+          <li>Production server setup on IIS with the .NET hosting bundle</li>
+          <li>Team work: code review, task planning and mentoring</li>
+        </ul>
+        <div class="chips"><span class="chip hot">ASP.NET Core</span><span class="chip">C#</span><span class="chip">Oracle</span><span class="chip">IIS</span></div>
+      </article>
+
+      <article class="proj feature reveal">
+        <div class="tag">Internal tool · Office display</div>
+        <h3>Team Task Dashboard with Admin Panel</h3>
+        <p>A daily task and progress dashboard designed for a large office screen, so the whole team and visitors can see what is being worked on at a glance. An admin panel lets authorised users add and update tasks, and the display refreshes to match.</p>
+        <ul>
+          <li>Live view of tasks and progress across the team's projects</li>
+          <li>Admin access to create, assign and update tasks</li>
+          <li>Built for easy reading on a wall-mounted LCD</li>
+        </ul>
+        <div class="chips"><span class="chip hot">Admin panel</span><span class="chip">Office display</span><span class="chip">Progress tracking</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tag">2025 · Production</div>
+        <h3>Clinic Patient Management</h3>
+        <p>A web system for a health care center in Oman, delivered remotely.</p>
+        <ul><li>Patient registration and prescription management</li><li>Medication tracking</li><li>Reporting dashboard</li></ul>
+        <div class="chips"><span class="chip hot">ASP.NET Core</span><span class="chip">SQL Server</span><span class="chip">REST APIs</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tag">2022 – 2025</div>
+        <h3>Enterprise Platform</h3>
+        <p>A multi-module platform for business clients at Mobile Soft &amp; Net, Sharjah.</p>
+        <ul><li>Role-based admin dashboards</li><li>Data visualization and workflow automation</li><li>Single-page front ends in Angular and React</li></ul>
+        <div class="chips"><span class="chip hot">Angular</span><span class="chip">React</span><span class="chip">ASP.NET Core</span><span class="chip">SQL Server</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tag">2020 – 2022</div>
+        <h3>Production Management System</h3>
+        <p>Software for manufacturing operations at A2C Services, Ras Al Khaimah.</p>
+        <ul><li>Inventory tracking</li><li>Employee performance tracking</li><li>Workflow improvements and query tuning</li></ul>
+        <div class="chips"><span class="chip hot">ASP.NET MVC</span><span class="chip">SQL Server</span><span class="chip">Stored procedures</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tag">2018 – 2020</div>
+        <h3>E-commerce Platform</h3>
+        <p>Online shopping web application built at Aroopa Technologies, Chennai.</p>
+        <ul><li>Catalogue, cart and order flow</li><li>Business reports with Crystal Reports</li></ul>
+        <div class="chips"><span class="chip hot">ASP.NET MVC</span><span class="chip">C#</span><span class="chip">SQL Server</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tag warm">Personal project</div>
+        <h3>DocShield</h3>
+        <p>An offline document converter for PDF, Word and PowerPoint, so that sensitive files never need to be uploaded to online converters.</p>
+        <ul><li>Runs on your own machine or server</li><li>LibreOffice as the conversion engine</li></ul>
+        <div class="chips"><span class="chip hot">.NET</span><span class="chip">LibreOffice</span><span class="chip">Privacy-first</span></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="tag warm">Personal project</div>
+        <h3>PDF Symbol Counter</h3>
+        <p>A web tool that counts legend symbols on CAD plan PDFs and exports the counts to Excel, named after the uploaded drawing.</p>
+        <ul><li>Upload a plan, get counts per symbol</li><li>One-click Excel download</li></ul>
+        <div class="chips"><span class="chip hot">.NET</span><span class="chip">PDF processing</span><span class="chip">Excel export</span></div>
+      </article>
+
+    </div>
+    <p class="note">Want details on any project? Ask me for a walkthrough or screenshots.</p>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--bg2)">
+  <div class="wrap">
+    <span class="eyebrow">Experience</span>
+    <h2>Where I have worked</h2>
+    <p class="lead">Eight years, four companies, from Chennai to the UAE.</p>
+    <div class="timeline">
+      <div class="job reveal"><div class="when">2026 – Present</div><h3>Senior .NET Full Stack Developer</h3><div class="where">Hemaya (Al Hemaya Security Services) · Government client, Dubai</div>
+        <ul><li>Build and maintain an enterprise HR and budget web application in production</li><li>Own deployment and server setup on IIS</li><li>Guide and review the work of junior developers</li></ul></div>
+      <div class="job reveal"><div class="when">Nov 2025 – Jan 2026</div><h3>Freelance .NET Developer</h3><div class="where">Remote · Health care center, Oman</div>
+        <ul><li>Designed and developed a clinic patient management system</li><li>Built patient registration and prescription modules</li></ul></div>
+      <div class="job reveal"><div class="when">Oct 2022 – Oct 2025</div><h3>Senior Software Developer</h3><div class="where">Mobile Soft &amp; Net · Sharjah, UAE</div>
+        <ul><li>Designed and built web and app-based software for several business clients</li><li>Delivered admin dashboards, data visualization and workflow automation</li><li>Mentored junior developers</li></ul></div>
+      <div class="job reveal"><div class="when">Nov 2020 – Oct 2022</div><h3>System Software Developer</h3><div class="where">A2C Services · Ras Al Khaimah, UAE</div>
+        <ul><li>Built production management and employee performance tracking systems for manufacturing</li><li>Optimized SQL queries and stored procedures</li></ul></div>
+      <div class="job reveal"><div class="when">Apr 2018 – Oct 2020</div><h3>Software Engineer</h3><div class="where">Aroopa Technologies · Chennai, India</div>
+        <ul><li>Developed business web applications in ASP.NET MVC and C#</li><li>Built reports with Crystal Reports on SQL Server</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap two">
+    <div class="panel reveal"><span class="eyebrow">Education</span><h3 style="font-size:1.15rem">Master of Computer Applications (MCA)</h3><p style="color:var(--muted);font-size:.92rem">Alagappa University · Computer Science</p></div>
+    <div class="panel reveal"><span class="eyebrow">Currently learning</span><h3 style="font-size:1.15rem">Azure &amp; AI integration</h3><p style="color:var(--muted);font-size:.92rem">Cloud deployment and adding AI features to .NET applications.</p></div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+  <div class="wrap">
+    <div class="contact reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's build something solid</h2>
+      <p>Open to conversations about .NET, full stack and enterprise projects. The quickest way to reach me is by email or LinkedIn.</p>
+      <div class="cta">
+        <a class="btn primary" id="mail" href="#">✉ Email me</a>
+        <a class="btn" id="li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" id="cv" href="#" target="_blank" rel="noopener">⬇ Download CV</a>
+        <a class="btn" id="tel" href="#">📞 Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Muhammed Jalees · Dubai, UAE</footer>
+
+<script>
+/* ===== EDIT THESE ===== */
+const CONFIG = {
+  email:    "",   // e.g. "yourname@gmail.com"  (hides the button if empty)
+  phone:    "",   // e.g. "+971 5X XXX XXXX"    (hidden if empty, recommended to keep private)
+  linkedin: "https://www.linkedin.com/in/muhammed-jalees-6333891b8/",
+  cv:       ""    // e.g. "Muhammed-Jalees-CV.pdf" (upload the PDF next to index.html)
+};
+/* ====================== */
+(function(){
+  const set=(id,href,show)=>{const el=document.getElementById(id);if(!show){el.style.display="none";return}el.href=href};
+  set("mail","mailto:"+CONFIG.email,!!CONFIG.email);
+  set("tel","tel:"+CONFIG.phone.replace(/\s/g,""),!!CONFIG.phone);
+  set("li",CONFIG.linkedin,!!CONFIG.linkedin);
+  set("cv",CONFIG.cv,!!CONFIG.cv);
+  document.getElementById("yr").textContent=new Date().getFullYear();
+
+  // theme
+  const root=document.documentElement,btn=document.getElementById("theme");
+  let saved=null;try{saved=localStorage.getItem("theme")}catch(e){}
+  const apply=t=>{root.setAttribute("data-theme",t);btn.textContent=t==="light"?"☾":"☀"};
+  apply(saved|| (matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));
+  btn.onclick=()=>{const t=root.getAttribute("data-theme")==="light"?"dark":"light";apply(t);try{localStorage.setItem("theme",t)}catch(e){}};
+
+  // reveal on scroll
+  const els=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }else els.forEach(el=>el.classList.add("in"));
+})();
+</script>
+</body>
+</html>
